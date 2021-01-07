@@ -1,0 +1,2503 @@
+* {
+    --splash-height: 500px;
+    --width: 100%;
+    box-sizing: border-box;
+    padding: 0px;
+    margin: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.75rem;
+
+}
+
+
+a {
+    color: var(--Musta);
+    text-decoration: none;
+    /* no underline */
+}
+
+/* TODO: needs to be changed later on and make normal <a></a> links blue and setup menus with different colors. */
+a.inline {
+    color: var(--Bussi);
+    text-decoration: underline;
+}
+
+
+body {
+    background-color: rgb(240, 240, 240);
+}
+
+h1{
+    line-height: 2.50rem;
+}
+
+h1,
+h2,
+h3 {
+    margin-bottom: 16px;
+    font-size: 2.5rem;
+    line-height: 0.9;
+}
+
+
+@media only screen and (max-width: 860px){
+    h1 {
+        line-height: 2.30rem;
+    }
+    
+}
+
+.wrapper {
+    width: var(--width);
+    max-width: 1440px;
+    background-color: var(--Valkoinen);
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    height: var(--splash-height);
+    width: var(--width);
+    margin: 0px 0px 50px 0px;
+}
+
+/* if header doesn't have underlying picture, this should be applied */
+.container.no-header-image {
+    height: 280px;
+    margin: 20px 0px;
+}
+
+
+.wideImage {
+    background-size: cover;
+    background-position: center center;
+    position: absolute;
+    height: var(--splash-height);
+    min-width: 1440px;
+
+}
+
+svg {
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.wavecontainer {
+    display: inline-block;
+    position: relative;
+    width: 100%;
+    vertical-align: middle;
+    overflow: hidden;
+    height: 28px;
+    bottom: 28px;
+}
+
+
+.blueSVGColour {
+    filter: invert(91%) sepia(11%) saturate(1467%) hue-rotate(103deg) brightness(99%) contrast(86%);
+}
+
+.lightGreySVGcolour {
+    filter: invert(92%) sepia(3%) saturate(91%) hue-rotate(203deg) brightness(107%) contrast(96%);
+}
+
+.bold {
+    font-weight: bold;
+}
+
+/* Basic stuff */
+.wavemotif-loader {
+    display: block;
+    position: relative;
+    width: 100%;
+    padding: 25px 0;
+    content: "ss";
+}
+
+/* Colors for wave motifs */
+.waveKupari {
+    background-color: var(--Kupari-light-50);
+}
+
+.waveUIGREY {
+    background-color: var(--UI-grey);
+}
+
+.waveSuomenlinna {
+    background-color: var(--Suomenlinna-light-50);
+}
+
+.waveEngel {
+    background-color: var(--Engel-light-50);
+}
+
+/* Wave motifs */
+.waveTyrsky {
+    -webkit-mask-image: url("waves/tyrsky.svg");
+    mask-image: url("waves/tyrsky.svg");
+    -webkit-mask-size: cover;
+    mask-size: cover;
+}
+
+.Upsidedown {
+    transform: rotate(180deg);
+}
+
+.waveVarina {
+    -webkit-mask-image: url("waves/varina.svg");
+    mask-image: url("waves/varina.svg");
+    height: 10px;
+}
+
+.waveSyke {
+    -webkit-mask-image: url("waves/syke.svg");
+    mask-image: url("waves/syke.svg");
+    -webkit-mask-size: cover;
+    mask-size: cover;
+    height: 95px;
+}
+
+.waveSykeUpsidedown {
+    transform: rotate(180deg);
+    -webkit-mask-image: url("waves/syke.svg");
+    mask-image: url("waves/syke.svg");
+    -webkit-mask-size: cover;
+    mask-size: cover;
+    height: 95px;
+    margin-bottom: 100px;
+}
+
+.wavePulssi {
+    -webkit-mask-image: url("waves/pulssi.svg");
+    mask-image: url("waves/pulssi.svg");
+    -webkit-mask-size: cover;
+    mask-size: cover;
+    bottom: 50px;
+}
+
+.wavePerus {
+    -webkit-mask-image: url("waves/perus.svg");
+    mask-image: url("waves/perus.svg");
+    -webkit-mask-size: cover;
+    mask-size: cover;
+    bottom: 25px;
+
+}
+
+.wavePerusUpsidedown {
+    transform: rotate(180deg);
+    -webkit-mask-image: url("waves/perus.svg");
+    mask-image: url("waves/perus.svg");
+    -webkit-mask-size: cover;
+    mask-size: cover;
+    height: 250px;
+}
+
+
+.waveTyyni {
+    -webkit-mask-image: url("waves/tyyni.svg");
+    mask-image: url("waves/tyyni.svg");
+    -webkit-mask-size: cover;
+    mask-size: cover;
+    bottom: 25px;
+}
+
+/* Blockquote */
+
+
+/* Blockquote stylized */
+blockquote p {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    color: var(--Musta);
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* Spawning the "Quote mark" */
+blockquote p:before {
+    display: flex;
+    flex-grow: 1;
+    content: '“';
+    padding: 0 15px;
+    margin: 0px;
+    font-size: 120px;
+    color: var(--Kupari-light-50);
+}
+
+/* Title for quote */
+blockquote header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 1.9rem;
+    margin: 1rem;
+    font-size: 16px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* Cited person */
+blockquote footer cite {
+    display: flex;
+    justify-content: left;
+    align-items: left;
+    height: 0rem;
+    margin: 0rem;
+    font-weight: bold;
+    font-style: normal;
+    padding: 0 110px;
+
+}
+
+/* Job title */
+blockquote footer span {
+    display: flex;
+    justify-content: left;
+    align-items: left;
+    margin: 1.6rem 0;
+    padding: 0 110px;
+
+}
+
+/* Navigation bar */
+
+.navigation {
+    display: grid;
+    grid-template-columns: 110px 1fr 100px 110px 200px 1fr 2fr 50px;
+
+    grid-template-rows: auto;
+    grid-template-areas:
+        "helsinkiLogo NewCo Palvelut Tapahtumat Oppaita Tietoa searchIcon langDropdown"
+        ". . Palvelut-content . Oppaita-content Tietoa-content . langDropdown-content";
+    grid-gap: 0 10px;
+    justify-content: center;
+    align-content: flex-end;
+    white-space: nowrap;
+}
+
+.dropdown-content {
+    height: 0px;
+    opacity: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-content: flex-start;
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+}
+
+#NewCo {
+    grid-area: NewCo;
+    align-self: center;
+}
+
+#Palvelut {
+    grid-area: Palvelut;
+    align-self: center;
+
+}
+
+#Palvelut-content {
+    grid-area: Palvelut-content;
+}
+
+
+#Tapahtumat {
+    align-self: center;
+    top: 50px;
+    grid-area: Tapahtumat
+}
+
+#Oppaita {
+    align-self: center;
+    grid-area: Oppaita;
+}
+
+#Oppaita-content {
+    grid-area: Oppaita-content;
+}
+
+#Tietoa {
+    align-self: center;
+    grid-area: Tietoa;
+}
+
+#Tietoa-content {
+    grid-area: Tietoa-content;
+}
+
+#searchIcon {
+    grid-area: searchIcon;
+    justify-self: end;
+    align-self: center;
+}
+
+#langDropdown {
+    align-self: center;
+    grid-area: langDropdown;
+}
+
+#langDropdown-content {
+    display: flex;
+    flex-direction: column;
+    opacity: 0;
+    grid-area: langDropdown-content;
+}
+
+.navigation>p,
+a {
+    font-size: 1.2rem;
+
+}
+
+.helsinkiLogo {
+    grid-area: helsinkiLogo;
+    width: 100px;
+    margin: 10px;
+
+}
+
+
+.navItem {
+    margin: 15px;
+    text-align: center;
+    display: flex;
+    align-content: center;
+}
+
+
+.navigation>.dropbtn {
+    font-size: 0.9rem;
+    cursor: pointer;
+    background-color: white;
+    z-index: 2;
+    font-weight: bold;
+}
+
+
+.dropbtn>img {
+    position: relative;
+    top: 7px;
+    right: 3px;
+}
+
+.dropdownLink {
+    margin: 10px 0px;
+}
+
+.dropdownLink>a,
+span {
+    font-weight: bold;
+    font-size: 0.9rem;
+    line-height: 2rem;
+}
+
+.dropdownLink>span {
+    color: gray;
+}
+
+.dropdown-content>a {
+    font-size: 0.9rem;
+    line-height: 2rem;
+    color: black;
+    text-decoration: none;
+    text-align: left;
+    font-weight: bold;
+}
+
+.active {
+    opacity: 1;
+    display: block;
+    height: 250px;
+}
+/* Header image with diagonal swirl */
+
+.headerWithDiagnalLine {
+    height: var(--splash-height);
+    width: var(--width);
+}
+
+
+.diagonal-overlay {
+    position: absolute;
+    height: var(--splash-height);
+    right: 10%;
+    width: 100%;
+}
+
+.diagonal-overlay-mobile {
+    display: none;
+    height: 400px;
+    top: 300px;
+}
+
+.HeaderText {
+    margin: 50px;
+    position: absolute;
+    margin-top: 10%;
+    left: 5%;
+    min-width: 300px;
+    width: 500px;
+    font-size: 1.2rem;
+    line-height: 1.8rem;
+}
+
+.HeaderText>h1 {
+    margin-bottom: 20px;
+
+}
+
+/* Header image with downwards wave patern */
+
+.pageTitleText {
+    margin: 50px;
+    position: absolute;
+    margin-top: 75px;
+    left: 5%;
+    min-width: 300px;
+    width: 500px;
+    line-height: 5rem;
+}
+
+.pageTitleText>h1 {
+    margin-bottom: 1.5rem;
+    font-size: 3rem;
+}
+
+/* Singular News Article */
+h4.dividerDate {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 1.9rem;
+    margin: 0rem;
+    padding: 4rem 0 0;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: normal;
+}
+h5.dividerDate {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 1.9rem;
+    margin: 0rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: normal;
+}
+
+img.newsImg {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    padding: 4rem 0 0;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: normal;
+    width: 70%;
+
+}
+
+
+.contentNews {
+    width: 100%;
+    text-align: center;
+    margin: 36px auto;
+}
+
+.contentNews .innerContentNews {
+    width: 50%;
+    text-align: center;
+    margin: 36px auto;
+    text-align: left;
+}
+
+.contentNews .innerContentNews>p {
+    padding: 0 0 4%;
+}
+@media only screen and (max-width: 860px){
+    .contentNews .innerContentNews{
+        width: 85%;
+    }
+    .innerContentNews h3{    
+    text-align: center;
+    }
+}
+
+/* More news section */
+img.smallerNewsImg {
+    width: 100%;
+    height: 50%;
+}
+
+div.mNews {
+    max-width: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 10px 10px;
+    font-size: 1.2rem;
+}
+
+div.mNewsCenter {
+    max-width: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 100px 0 50px;
+    font-size: 1.2rem;
+
+}
+
+.mNewsText {
+    padding: 40px;
+    background: var(--Valkoinen);
+}
+
+.mNewsDate {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0rem;
+    padding: 0 0 0.2rem;
+    text-transform: uppercase;
+    letter-spacing: -1px;
+    font-size: 15px;
+}
+
+.mNewsReadMore:first-letter {
+    text-transform: capitalize;
+}
+
+.mNewsReadMore a.inline {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0rem;
+    padding: 2rem 0 0.2rem;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: bold;
+    letter-spacing: -1px;
+}
+
+.mNewsMain {
+    
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: var(--UI-grey);
+}
+
+ul.personelInfo>li {
+    list-style-type: none;
+}
+
+ul.personelInfo li.name {
+    font-weight: bold;
+}
+
+.Button {
+    margin: 20px;
+    padding: 15px;
+    color: var(--Bussi);
+    border: 2px solid var(--Bussi);
+}
+
+.Button>a {
+    color: var(--Bussi);
+}
+
+/* Yhteystiedot profile cards */
+
+h4.dividerTitle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 1.9rem;
+    margin: 0rem;
+    padding: 4rem 0 0;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    background-color: var(--UI-grey);
+}
+
+img.profilePicture {
+    border-radius: 50%;
+    width: 15rem;
+    height: 15rem;
+}
+
+div.personel {
+    max-width: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 10px 10px;
+    font-size: 1.2rem;
+}
+
+.personelText {
+    padding: 40px;
+}
+
+.personelMain {
+    padding: 50px 50px 200px 50px;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: var(--UI-grey);
+}
+
+ul.personelInfo>li {
+    list-style-type: none;
+}
+
+ul.personelInfo li.name {
+    font-weight: bold;
+}
+
+/* Yhteystiedot profile cards */
+
+h4.dividerTitle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 1.9rem;
+    margin: 0rem;
+    padding: 4rem 0 0;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    background-color: var(--UI-grey);
+}
+img.profilePicture {
+    border-radius: 50%;
+    width:15rem;
+    height:15rem;
+}
+div.personel {
+    max-width: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 10px 10px;
+    font-size: 1.2rem;
+}
+.personelText {
+    padding: 40px;
+}
+.personelMain {
+    padding: 50px 50px 200px 50px;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: var(--UI-grey);
+}
+ul.personelInfo > li {
+    list-style-type: none;
+}
+ul.personelInfo li.name {
+    font-weight:bold;
+}
+
+/* Content Cards */
+
+.contentText {
+    width: 55%;
+    text-align: center;
+    margin: 55px auto;
+}
+
+.filterButtons {
+    margin-top: 15px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.filterButton {
+    width: 300px;
+    border: 2px solid blue;
+    color: blue;
+    padding: 10px 20px;
+    margin: 40px 15px;
+}
+
+
+.filterButton:hover,
+.filterButton:active {
+    border: 2px solid blue;
+    color: white;
+    background-color: blue;
+}
+.filterButton a:hover,
+.filterButton a:active {    
+    color: white;
+}
+.tietoaMeista_link{
+    border: 2px solid var(--Bussi);
+    padding: 10px 35px;
+    margin: 15px 0px;
+    color: var(--Bussi);
+    /*
+    box-shadow: 1px 1px 5px 0px var(--Bussi);*/
+}
+
+.tietoaMeista_link:hover,
+.tietoaMeista_link:active,
+.readMoreBox2:hover,
+.readMoreBox2:active {
+    border: 2px solid var(--Bussi);
+    color: white;
+    background-color: var(--Bussi);
+    box-shadow: 1px 1px 5px 0px var(--Bussi);
+}
+.tietoaMeista_link a:hover,
+.tietoaMeista_link a:active,
+.readMoreBox2:hover,
+.readMoreBox2:active {    
+    color: white;
+}
+.linkContainer{
+    text-align: center; 
+    margin: 45px auto;
+}
+/* boxes link*/
+.readMoreBox2{
+    border: 2px solid var(--Bussi);
+    padding: 10px 20px;
+    margin: 15px 0px;
+    color: var(--Bussi);    
+}
+
+.readMoreBox3:hover,
+.readMoreBox3:active {
+    border: 2px solid black;
+    color: black;
+    background-color: white;
+}
+
+.readMoreBox3{
+    border: 2px solid black;
+    padding: 10px 20px;
+    margin: 15px 0px;
+    color: black;
+}
+
+@media only screen and (max-width: 860px){
+    .readMoreBox3, .readMoreBox2{
+        padding: 5px 10px;
+    }
+    .filterButtons{
+        margin: 15px auto;
+        flex-direction: column;
+    }
+    .filterButton{
+        width: auto;
+        padding: 10px 20px;
+        margin: 10px auto;
+    }
+    .contentText{
+        width: 80%;
+        text-align: center;
+        margin: 28px auto;
+    }    
+}
+@media only screen and (orientation: landscape) and (max-width: 860px){
+    .readMoreBox3, .readMoreBox2{
+        padding: 10px 15px;
+    }
+    .tietoaMeista_link{        
+        margin: 8px 5px;        
+    }
+    .filterButtons{
+        margin: 15px auto;
+        flex-direction: row;
+    }
+    
+}
+
+.contentCards {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.Card {
+    background-color: rgb(240, 238, 238);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+    width: 333px;
+    height: 430px;
+    margin: 10px;
+    padding: 20px;
+    font-size: 1.2rem;
+}
+
+.Card>hr {
+    width: 50%;
+    margin: 0 auto;
+    color: var(--Kupari-light-50);
+}
+
+.cardIcon {
+    height: 50px;
+}
+
+.readMore>a {
+    position: relative;
+    color: var(--Bussi);
+}
+
+.cardArrow {
+    margin: 0 5px;
+    color: var(--Bussi);
+    filter: invert(30%) sepia(55%) saturate(7412%) hue-rotate(230deg) brightness(96%) contrast(91%);
+}
+
+.seeAllButton {
+    margin: 50px auto;
+    text-align: center;
+    min-width: 250px;
+    padding: 10px;
+    background-color: var(--Bussi);
+    width: 30%;
+    color: white;
+}
+.seeAllButton a{
+    color: white;
+}
+/* Palvelut Content card */
+
+.palvelut-headline {
+    font-weight: bold;
+}
+
+.palvelu-filter {
+    border: solid 2px var(--Bussi);
+    padding: 15px;
+    margin: 20px;
+    color: var(--Bussi);
+}
+
+#loadMoreEvents {
+    border: solid 2px var(--Bussi);
+    padding: 15px;
+    margin: 20px;
+    color: var(--Bussi);
+    display: block;
+    width: 200px;
+    margin: 0 auto;
+}
+
+#loadMoreNews {
+    text-align: center;
+    border: solid 2px var(--Bussi);
+    padding: 15px;
+    margin: 20px;
+    
+    display: block;
+    width: 200px;
+    margin: 0 auto;
+}
+
+.palvelu-filter-selected {
+    background: var(--Bussi);
+    color: white;
+}
+/*
+.contentText {
+    margin: 20px auto;
+    width: 50%;
+    text-align: center;
+    margin: 36px auto;
+}
+*/
+
+.palvelurajaus {
+    display: flex;
+    margin: 0 5px;
+    justify-content: center;
+    flex-direction: row;
+}
+@media only screen and (max-width: 860px){
+    .palvelurajaus {
+        flex-wrap: wrap;
+        text-align: center;
+    }
+}
+
+
+.palvelu-filter {
+    padding: 8px 20px;
+
+}
+
+/* NewsCards */
+.newsContainer {
+    background-color: var(--UI-grey);
+    padding: 50px 10px;
+}
+
+.newsCards {
+    padding: 20px 0 0px 0;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: var(--UI-grey);
+}
+
+.News {
+    background-color: rgb(255, 255, 255);
+    max-width: 333px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+    margin: 10px 10px;
+    font-size: 1.2rem;
+}
+
+.newsPhoto {
+    width: 100%;
+    height: 225px;
+}
+
+.newsText {
+    padding: 40px;
+    text-align: center;
+}
+
+/* guideDownloads */
+
+.guideTitle {
+    background-color: var(--UI-grey);
+    text-align: center;
+    padding: 50px;
+}
+
+.guideDownloads {
+    padding: 50px;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: var(--UI-grey);
+}
+
+.Guide {
+    background-color: rgb(255, 255, 255);
+    max-width: 350px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+    margin: 10px 10px;
+    font-size: 1.2rem;
+}
+
+.guidePhoto {
+    width: 100%;
+    height: 225px;
+}
+
+.guideText {
+    padding: 40px;
+}
+
+.kaikkiuutiset{
+    width: fit-content;
+    margin: auto;
+    text-align: center;
+}
+.downloadGuideButton{
+    margin: 20px;
+}
+
+.downloadGuideButton, .kaikkiuutiset{    
+    padding: 15px;
+    color: var(--Bussi);
+    border: 2px solid var(--Bussi);
+}
+
+.downloadGuideButton>a, .kaikkiuutiset>a{
+    color: var(--Bussi);
+}
+.
+@media only screen and (max-width: 860px){
+    .guideTitle{
+        padding: 20px;
+    }
+    .newsContainer{
+        padding: 10px;
+    }    
+}
+
+/* VideoSection */
+
+
+.videoText {
+    padding: 40px;
+}
+
+/* Statistics */
+
+.statisticbox {
+    background-color: var(--UI-grey);
+    width: 100%;
+    padding: 50px;
+}
+
+.statisticTitle {
+    text-align: center;
+}
+
+.Statistics {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-self: center;
+
+}
+.statistic {
+    width: 234px;
+    height: 200px;
+    text-align: center;
+    margin: 75px;
+}
+@media only screen and (max-width: 860px){
+    .statisticbox{
+        padding: 20px;
+    }
+    .statistic{
+        width: 184px;
+        height: 150px;        
+        margin: 75px;
+    }
+    
+}
+
+/* eventstyles.css */
+.bgGrey{
+    padding: 60px 0px;
+    background-color: var(--UI-grey);
+}
+@media only screen and (max-width: 860px){
+    .bgGrey{
+        padding: 30px 0px;
+        
+    }
+}
+
+
+.Eventtext {
+    flex-direction: column;
+    height: 250px;
+    text-align: center;
+}
+
+.Eventtext p {
+    max-width: 500px;
+    align-self: center;
+    font-size: 1.25rem;
+    margin: auto;
+}
+
+.EventContainer {
+    display: flex;
+    flex-flow: column wrap;
+    align-content: center;
+    text-align: center;
+    position: relative;
+    width: var(--width);
+
+}
+
+.EventCategories {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 1.5rem;
+
+}
+.EventCards {
+
+    display: flex;
+    flex-direction: column;
+
+}
+.EventCard {
+    background-color: white;
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    grid-template-rows: 1fr / 2fr;
+    min-width: 400px;
+    max-width: 800px;
+    height: 200px;
+    margin: 10px auto;
+    padding: 40px 40px 40px 20px;
+}
+
+.EventCard a {
+    justify-self: end;
+    padding-right: 4rem;
+}
+
+.Cardcon {
+    text-align: left;
+    place-self: start start;
+    padding-right: 4rem;
+}
+
+.Cardcontent h4, .Cardcontent p {
+    text-align: start;
+}
+
+.datetime {
+    grid-row: span 2;
+    place-self: start center;
+    text-align: start;
+}
+.readMoreh a {
+    color: var(--Bussi);
+}
+
+.readMoreh>.dropbtnh {
+    font-size: 0.9rem;
+}
+
+
+.readMore {
+    place-self: end start;
+}
+
+.readMore>.dropbtn {
+    font-size: 0.9rem;
+}
+
+.seeAllButton2 {
+    margin: 1rem;
+    text-align: center;
+    padding: 10px 15px 10px 15px;
+    background-color: transparent;
+    border: 2px solid var(--Bussi);
+    color: var(--Bussi);
+    min-height: 56px;
+    flex-basis: 48px auto;
+    flex-grow: 100px;
+    font-weight: bold;
+}
+
+#moreEvents {
+    align-self: center;
+    flex: auto;
+}
+h4.eventDate {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 1.9rem;
+    margin: 0 0 3rem 0;
+    padding: 4rem 0 0;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: normal;
+}
+
+
+
+/* END eventstyles.css */
+
+/* Events */
+
+.eventcontainer {
+    background-color: var(--UI-grey);
+    height: var(--splash-height);
+    width: var(--width);
+}
+
+.eventCards {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.event {
+    display: flex;
+    padding: 40px;
+    width: 70%;
+    background-color: white;
+    flex-wrap: nowrap;
+}
+
+.event > div {
+    margin: 20px;
+}
+.event > .address {
+    min-width: 200px;
+}
+
+/* VideoSection */
+
+.videoTitle {
+    background-color: var(--UI-grey);
+    text-align: center;
+    padding: 50px;
+}
+
+.videoList {
+    padding: 30px 0px 75px 0px;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: var(--UI-grey);
+}
+
+.Video {
+    background-color: rgb(255, 255, 255);
+    max-width: 333px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+    margin: 10px 10px;
+    font-size: 1.2rem;
+}
+
+.videoPhoto {
+    width: 100%;
+    height: 225px;
+}
+
+.videoText {
+    padding: 40px;
+}
+
+
+
+/* Wide image with Text box on the right */
+
+.overlayImageLeft {
+    display: flex;
+    flex-direction: column;
+    z-index: 2;
+    position: absolute;
+    left: 5%;
+    height: 400px;
+    width: 500px;
+    background-color: var(--Kupari-light-50);
+    padding: 30px;
+    font-size: 1.2rem;
+    top: 50px;
+
+}
+
+
+/* Square image with Text box on the left */
+
+.overlayImageRight {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    top: 10%;
+    left: 20%;
+    padding: 36px;
+    height: 400px;
+    width: 500px;
+    background-color: var(--Suomenlinna-light-50);
+    font-size: 1.1rem;
+}
+
+.eventsButton {
+    text-align: center;
+    padding: 10px;
+    border: 2px solid #1a1a1a;
+    margin-top: auto;
+    width: 60%;
+}
+
+.squareImageLeft {
+    position: absolute;
+    left: 5%;
+    height: var(--splash-height);
+    width: 700px;
+
+}
+
+/* Square image with Text box on the Right */
+
+/* .overlayImageRight {
+    element already defined
+} */
+
+
+.eventsButton {
+    padding: 10px;
+    border: 2px solid var(--Black-80);
+    margin-top: auto;
+    width: 60%;
+}
+
+.squareImageRight {
+    position: absolute;
+    margin-left: 10%;
+    height: var(--splash-height);
+    width: 700px;
+}
+
+/* Quote carousel */
+
+.quoteCarousel {
+
+    text-align: center;
+    
+    border: none;
+    margin: 8%;
+}
+
+.quoteCarousel > header {
+    font-size: 1.5rem;
+}
+
+.quoteCarousel > blockquote {
+    min-width: 400px;
+    display: flex;
+}
+
+.quoteCarousel > blockquote > p {
+    font-size: 2rem;
+    line-height: 2.5rem;
+}
+
+.quoteImage {
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    margin: 10px;
+}
+
+.quoteArrow {
+    height: 100px;
+}
+.quoteMessage{
+    width: 75%;
+}
+.quoteMessage p:before {    
+    content: '“';
+    padding: 0 15px;
+    margin: 0px;
+    font-size: 120px;
+    color: var(--Kupari-light-50);
+}
+
+/* Email Subscription box */
+
+.emailSubscription {
+    display: block;
+    margin-bottom: 60px;
+}
+
+.squareImage60 {
+    position: absolute;
+    width: 1000px;
+    height: 500px;
+}
+
+.subscriptionBox {
+    position: relative;
+    display: flex;
+    left: 60%;
+    flex-direction: column;
+    background-color: var(--Engel-light-50);
+    padding: 30px;
+    width: 500px;
+    height: 500px;
+}
+
+.subscriptionBox>h3 {
+    font-size: 3rem;
+}
+
+.subscriptionBox>p {
+    font-size: 1.2rem;
+    margin: 10px;
+}
+
+.subscriptionBox>form>input {
+    margin: 10px;
+    border: 2px solid var(--Musta);
+}
+
+#emailInput {
+    height: 2.5rem;
+    width: 60%;
+}
+
+/* Wide newsletter box*/
+
+.emailSubscriptionWide {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    padding: 30px;
+    background-color: white;
+}
+
+.subscriptionBoxWide {
+    position: relative;
+    background-color: var(--Engel-light-50);
+    padding: 40px;
+    width: 80%;
+    height: 250px;
+    display: grid;
+    grid-template-columns: 0.5fr 1fr 2fr;
+    grid-gap: 10px;
+}
+.gridImg {
+    grid-column: 1 / 2;
+}
+
+.gridFirst {
+    grid-column: 2 / 3;
+    grid-row: 1 / 3;
+    display: flex;
+    flex-direction: column;
+}
+.tilaaHeader {
+    font-size: 2rem;
+}
+
+.gridSecond {
+    grid-column: 3 / 4;
+
+}
+
+#emailInput {
+    height: 3.5rem;
+    width: 50%;
+    margin: 0;
+}
+
+#yrittäjyydestäCheckbox {
+    border: 2px solid #1a1a1a;
+    height: 20px;
+    width: 20px;
+    background-color: white;
+    margin-top: 20px;
+    margin-left: 0;
+}
+
+#tapahtumistaCheckbox {
+    border: 2px solid #1a1a1a;
+    height: 20px;
+    width: 20px;
+    background-color: white;
+    margin-left: 0;
+}
+
+.demon {
+    display: flex;
+    position: absolute;
+    right: 60px;
+    top: 68px;
+}
+
+.submitButton {
+    font-size: 1rem;
+    text-align: center;
+    text-justify: center;
+    padding: 15px;
+    border: 2px solid #1a1a1a;
+    background-color: var(--engel);
+    width: 100%;
+    height: 3.5rem;
+    float: right;
+}
+
+/* Palvelut2 pages stylings below */
+
+.ajanvaraus {
+    margin: 20px;
+    padding-bottom: 100px;
+}
+
+.varaus-link {
+    border: solid 2px var(--bussi);
+    padding: 20px;
+    color: white;
+    background-color: var(--bussi);
+}
+
+.timestableContainer {
+    background-color: var(--UI-grey);
+    padding: 60px;
+}
+
+.timestableContainer >h4 {
+   font-weight: normal;
+   text-align: center;
+   letter-spacing: 1px;
+   font-size: 20px;
+}
+
+.timestable {
+    margin: 50px;
+    display: grid;
+    grid-gap: 30px;
+    grid-template-columns: 1fr 2fr;
+    
+}
+.imgContainer{
+    justify-items: center;
+    align-items: center;
+    grid-column: 2;
+    grid-row: 1;
+}
+.imgContainer >img {
+    float: right;
+}
+.timesContainer {
+    padding-bottom: 50px;
+}
+@media only screen and (max-width: 860px){
+    .timestableContainer {        
+        margin: auto;
+        padding: 10px;
+    }
+    .timestable{
+        margin: 20px;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto 1fr;
+    }
+    .imgContainer{        
+        grid-area: 1 / 1 / 2 / 2;
+    }
+    .imgContainer img{
+        float: none;
+        width: 100%;
+    }
+    .timesContainer{
+        padding-bottom: 0px;
+    }
+    
+}
+    @media only screen and (orientation: landscape) and (max-width: 860px){
+    .seeAllButton {
+        margin: 25px auto;
+    }
+}
+
+.infonJälkeen {
+    margin: 50px auto;
+    width: 60%;
+    text-align: left;
+    margin: 36px auto;
+    padding-bottom: 60px;
+    padding-top: 60px;
+}
+@media only screen and (max-width: 860px){
+    .infonJälkeen{
+        width: 85%;
+    }
+}
+
+.infonJälkeen >h3 {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.englishSection {
+    margin: 50px auto;
+    width: 60%;
+    text-align: left;
+    margin: 36px auto;
+    padding-bottom: 60px;
+    padding-top: 60px;
+}
+.englishSection >h3 {
+    font-size: 24px;
+    font-weight: bold;
+}
+.englishSection a{
+    color: var(--Bussi);
+}
+@media only screen and (max-width: 860px){
+    .englishSection {
+    width: 85%;    
+    margin: 16px auto;
+    padding-bottom: 0px;
+    }
+    .englishSection h3{
+        text-align: center;
+    }
+}
+@media only screen and (orientation: landscape) and (max-width: 860px){
+    .englishSection p{
+        text-align: justify;
+    }
+
+}
+
+/* Big images 2  */
+
+
+.overlayImage4 {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    top: 100px;
+    left: 10%;
+    padding: 36px;
+    height: 400px;
+    width: 30%;
+    background-color: var(--Suomenlinna-light-50);
+    font-size: 1.1rem;
+}
+
+/* map */
+
+.mapcontainer {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    height: 500px;
+    background-color: var(--UI-grey);
+    margin-bottom: 0px;
+    height: var(--splash-height);
+    width: var(--width);
+}
+
+.textOverlayLeft>p {
+    margin-bottom: 20px;
+}
+
+.mapTextOverlay {
+    position: absolute;
+    top: 50px;
+    left: 5%;
+    width: 30%;
+}
+
+.map {
+    border: 20px solid white;
+    background-color: var(--UI-grey);
+    position: absolute;
+    top: 50px;
+    right: 5%;
+    height: 400px;
+    width: 50%;
+}
+
+/* footer */
+.footer {
+    background-color: var(--Kupari-light-50);
+    padding: 0rem;
+}
+
+.FooterWithoutMap {
+    margin-top: 200px;
+    background-color: var(--Kupari-light-50);
+    padding: 0rem;
+}
+
+.footerbox {
+    text-align: center;
+    position: relative;
+    bottom: 50%;
+}
+
+.footerbox>hr {
+    width: 90%;
+    text-align: right;
+    margin-left: 5%
+}
+
+.footerText {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.helsinkiLogoFooter {
+    width: 150px;
+}
+
+.footerBox {
+    line-height: 2.1rem;
+}
+
+.footerBox>img {
+    margin: 0.2rem;
+}
+
+.svgIcon {
+    width: 2rem;
+}
+
+.copyRight {
+    font-size: 0.85rem;
+    margin: 10px 5% 0 5%;
+}
+
+@media only screen and (max-width: 1130px) {
+
+    .navigation {
+        margin: 0px;
+        display: grid;
+        grid-template-columns: 1fr 1fr minmax(200px, 3fr) 2fr 1fr;
+        grid-template-rows: auto;
+        grid-template-areas:
+            "helsinkiLogo NewCo . searchIcon langDropdown"
+            "Palvelut Tapahtumat Oppaita Tietoa langDropdown-content"
+            "Palvelut-content . Oppaita-content Tietoa-content .";
+        justify-items: center;
+    }
+
+    .navItem {
+        margin: 0px;
+    }
+
+
+    .subscriptionBox {
+        left: 50%;
+    }
+
+    .quoteCarousel {
+        height: 850px;
+        width: 90%;
+        display:flex;
+        flex-direction: column;
+    }
+
+    .quoteArrow {
+        display: none;
+    }
+    .mapcontainer {
+        height: 700px;
+    }
+
+    /* footer */
+
+    .footerbox {
+        bottom: 30%;
+    }
+
+}
+
+@media only screen and (max-width: 860px) {
+    .palvelu-filter {
+        padding: 8px;
+        width: auto;
+        margin: 5px;
+    }
+
+    .palvelut-headline {
+        margin-bottom: 10px;
+    }
+
+    .EventCategories {
+        flex-wrap: wrap;
+    }
+
+    .EventCard {
+        width: 80%;
+    }
+}
+
+@media only screen and (max-width: 720px) {
+    .container {
+        margin-bottom: 25px;
+        /*
+        height: 750px;
+        */
+    }
+    .navigation {
+        display: grid;
+        grid-template-columns: 200px 1fr;
+        grid-template-rows: auto;
+        grid-template-areas:
+            "helsinkiLogo NewCo  "
+            "Palvelut ."
+            "Palvelut-content ."
+            "Tapahtumat ."
+            "Oppaita ."
+            "Oppaita-content ."
+            "Tietoa ."
+            "Tietoa-content .";
+        justify-items: left;
+        text-align: center;
+        align-content: left;
+        margin-left: 20px;
+    }
+
+    .dropdown-content {
+        height: 0px;
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+        -webkit-transition: all 0.5s ease-in-out;
+        -moz-transition: all 0.5s ease-in-out;
+        -o-transition: all 0.5s ease-in-out;
+        transition: all 0.5s ease-in-out;
+        /* background-color: #f9f9f9;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        z-index: 1; */
+    }
+
+
+    #searchIcon {
+        display: none;
+    }
+
+    #langDropdown {
+        display: none;
+    }
+
+    #langDropdown-content {
+        display: none;
+    }
+
+    /* Header Image */
+
+    .diagonal-overlay-mobile {
+        display: inline;
+    }
+    .diagonal-overlay {
+        display: none;
+    }
+
+    .HeaderText {
+        top: 50%;
+        left: 0;
+        min-width: 200px;
+        width: 80%;
+    }
+
+    /* Content Cards */
+
+    .seeAllButton {
+        width: 80%;
+    }
+
+    /* Overlay images */
+    
+    .overlayImageRight {
+        top: 200px;
+        left: 5%;
+        width: 500px;
+    }
+
+    .overlayImageLeft {
+        top: 200px;
+        left: 0;
+        right: 0;
+        width: 90%;
+    }
+
+    .squareImageLeft{
+        left:0;
+    }
+    /* Quote Carousel */ 
+    .quoteCarousel {
+        height: 850px;
+        width: 90%;
+        display:flex;
+        flex-direction: column;
+    }
+
+    .quoteCarousel > blockquote {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .quoteArrow {
+        display: none;
+    }
+
+    /* email subscription */ 
+
+    .emailSubscription {
+        margin-bottom: 50px;
+    }
+
+    /* map */ 
+
+    .mapcontainer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+        height: 850px;
+    }
+
+    .mapTextOverlay {
+        position: relative;
+        top: 0;
+        left: 0;
+        width: 90%;
+    }
+    
+    .map {
+        text-align: center;
+        border: 20px solid white;
+        background-color: var(--UI-grey);
+        position: relative;
+        top: 0;
+        right: 0;
+        height: 400px;
+        width: 90%;
+    }
+    /* Footer */
+
+    .footerText {
+        position: relative;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+    /* guideDownloads */
+/*
+    .contentText {
+        width: 80%;
+        margin: 20px auto;
+    }
+*/
+    .guideDownloads {
+        padding: 0px;
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        background-color: var(--UI-grey);
+    }
+
+    .EventCard {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .EventCard .datetime {
+        margin-bottom: 20px;
+    }
+
+    .EventCard .Cardcon {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .Cardcon div {
+        width: 100%;
+        padding-right: 0px !important;
+    }
+
+    .neweventLocation {
+        width: 100% !important;
+        margin-top: 20px;
+        text-align: right; 
+        width: 250px;
+    }
+/*
+    .neweventLocation h4, p {
+        
+    }*/
+
+    .readMore {
+        margin-top: 20px;
+    }
+
+    .readMore .dropbtn {
+        padding: 0;
+    }
+}
+
+.eventText {
+    max-width: 980px;
+    margin: 0 auto;
+}
+.eventContent{
+    margin-bottom: 45px;
+}
+.eventContent .eventText p {
+    text-align: left;
+}
+@media only screen and (max-width: 860px){
+     .eventText {
+       width: 85%;
+    }
+    .eventText img{
+        width: 100%;
+     }
+     .eventText a{
+         text-align: center;
+     }
+}
+
+/* New header title and description */
+
+.newPageTitleText{
+    padding: 75px 0px 0px 75px;
+    position: absolute;    
+    width: 100%;
+    height: auto;
+}
+.newPageTitleText::after{
+    transform: rotateX(180deg);    
+    content: "";
+    height: 20px;
+    box-sizing: border-box;
+    position: absolute;
+    width: 100%;
+    left: 0;
+    right: 0;       
+}
+.yellowPageTitleBackground{
+    background: var(--Engel-light-50);
+}
+.yellowPageTitleBackground::after{
+    background-image: url(waves/newperus.svg); 
+}
+.bluePageTitleBackground{
+    background: var(--Kupari-light-50);
+    /* background: rgb(128, 235, 211); */
+}
+.bluePageTitleBackground::after{
+    background-image: url(waves/blue.svg); 
+}
+.lightRedPageTitleBackground{
+    background: var(--Suomenlinna-light-50);
+}
+.lightRedPageTitleBackground::after{
+    background-image: url(waves/red.svg); 
+}
+.grayPageTitleBackground{
+    background: var(--UI-grey);
+}
+.grayPageTitleBackground::after{
+    background-image: url(waves/gray.svg); 
+}
+
+
+.newPageTitleText p{
+    margin-bottom: 20px;
+}
+
+@media only screen and (max-width: 860px) {
+    .newPageTitleText{
+        padding: 0px;
+    }
+    .newPageTitleText  h1 {
+        text-align: center;
+        margin: 30px;   
+    }
+    .newPageTitleText p{
+        margin: 15px;
+    
+    }
+}
+/* Wide image with text box */
+.imageContainer2{    
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;    
+    width: 100%;
+    margin: 50px 0px;
+    height: 550px;
+    min-width: 220px;
+}
+.newImage2{     
+    grid-row: 1/9;
+    grid-column: 2/6;    
+}
+.newImage2left{
+    grid-row: 1/9;
+    grid-column: 3/7;
+}
+.newImage1{
+    grid-row: 1/9;
+    grid-column: 1/8; 
+}
+.newImage1, .newImage2, .newImage2left{
+    width: auto;
+    height: auto;
+    background-size: cover;
+    background-position: center center;  
+}
+.textBox1{
+    grid-area: 1/5/9/7;
+    margin: 25px auto;
+}
+.textBox2{
+   /* grid-area: 2 / 8 / 8 / 4;    */
+   grid-area: 1 / 6 / 9 / 8;
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+/* wide image with text box on left*/
+.textBox22{
+    grid-area: 1 / 1 / 9 / 3;
+    margin: 25px; 
+}
+.textBox3{
+    grid-area: 1 / 2 / 9 / 4;
+    margin: 25px auto;
+}
+.textBox2, .textBox3, .textBox22, .textBox1 {
+    display: flex;
+    flex-direction: column;
+    top: 10%;
+    left: 20%;
+    padding: 36px;
+    max-width: 600px;    
+    margin-right: 22px;
+    z-index: 10;
+    box-sizing:content-box;
+    padding: 22px;
+    background-color: thistle;
+}
+.textBox2 h1, .textBox3 h1, .textBox22 h1, .textBox1 h1{
+    overflow-wrap: anywhere;
+}
+.textBox2 p{
+    text-align: justify;
+}
+.textBox2 div, .textBox1 div, .textBox22 div{
+    margin-top: auto;
+    align-self: left;    
+}
+.textBox2 a, .textBox1 a, .textBox22 a{
+    width: auto;    
+}
+.textBox3 div{
+    margin-top: auto;    
+    align-self: left;    
+}
+@media only screen and (max-width: 860px){
+    .textBox2 h1, .textBox3 h1, .textBox22  h1, .textBox1 h1{
+        font-size: 2.3rem;
+    }
+    .textBox2, .textBox3, .textBox22 p, .textBox1 p{
+        line-height: 1.55rem;
+    }
+
+    .imageContainer2{
+        height: 550px;
+        margin: 15px auto;
+    }
+    .newImage2{
+        grid-row: 1/9;
+        grid-column: 1/9;
+    }
+    .newImage2left{
+        grid-row: 1/9;
+        grid-column: 1/9;
+    }
+    .textBox1{
+        grid-area: 1/2/9/8;
+    }
+    .textBox2{
+        grid-area: 1 / 2 / 9 / 9;
+        margin-bottom: 0px;
+        margin-right: 0px;
+    }
+    .textBox22{
+        grid-area: 1 / 1 / 9 /7;
+        margin-bottom: 10px;
+        margin-right: 0px;
+    }
+    .newImage3{
+        grid-row: 1/9;
+        grid-column: 1/9;
+    }
+    .textBox3{
+        grid-area: 1 / 1 / 9 / 8;
+        margin-bottom: 10px;
+        margin-top: 25px;
+    }
+    .eventsButton {
+        text-align: center;        
+        width: 85%;
+    }
+    .HeaderText h1{
+        font-size: 2.3rem;
+    }
+}
+@media only screen and (orientation: landscape) and (max-width: 860px) {
+    .imageContainer2{
+        height: 550px;
+    }
+    .eventsButton {        
+        width: 85%;
+    }
+    .textBox1{
+        grid-area: 1/4/9/8;
+    } 
+    .textBox2{
+        grid-area: 1 / 4 / 9 / 8;
+        margin-bottom: 15px;
+        
+    }
+    
+  .textBox22{
+        grid-area: 2 / 2 / 9 / 6;
+        margin-bottom: 15px;
+        
+    }
+    .imageContainer3{
+        height: 100vh;
+    }
+    .textBox3{
+        grid-area: 2 / 2 / 9 / 7;
+        margin-bottom: 15px;
+        
+    }
+    /* homepage header second p*/
+    .HeaderText p{
+        width: 56%;
+    }
+
+}
+/* Ipad 
+@media only screen and (orientation: portrait) and (max-width: 768px) and (max-height: 1024px){
+    .textBox{
+        grid-area: 2 / 3 / 6 / 6;
+        margin-bottom: 15px;
+        
+    }
+}
+*/
+/* email subscription form & shortcode */
+.mailIcon img{
+    width: 75px;
+}
+.mailSubscription{
+    grid-gap: 25px;
+    background-color: var(--Engel-light-50);
+    display: grid;    
+    width: auto;    
+    box-sizing: border-box;
+}
+.mailSubscription1{
+    padding: 48px;
+    margin: 45px 150px;
+    grid-template-rows: auto;
+    grid-template-columns: 0.5fr 2fr 1fr;
+}
+.mailSubscription2{
+    margin: 30px auto;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr 1fr;
+}
+.mailSubscription_text p{
+    text-align: justify;
+}
+.mmForm2{
+    padding: 25px;
+}
+.mmForm form{
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    padding-left: 22px;    
+}
+.mmForm form input[type=submit]{
+    margin-top: 15px;    
+    font-size: 1rem;
+    text-align: center;
+    text-justify: center;
+    padding: 15px;
+    border: 2px solid #1a1a1a;
+    background-color: var(--engel);
+    width: 100%;
+}
+@media only screen and (max-width: 860px){
+    .mailSubscription1{
+        grid-gap: 25px;
+        grid-template-rows: 0.5fr auto 1fr;
+        grid-template-columns: 1fr;
+        margin: 15px auto;
+    }
+   .mailSubscription2{
+    grid-template-rows: 0.5fr auto;
+    grid-template-columns: auto;
+}
+.mailSubscription2 h3{
+    text-align: center;
+}
+}
+@media only screen and (orientation: landscape) and (max-width: 860px){
+    .mailSubscription2{
+    margin: 25px auto;
+    grid-template-rows: 0.5fr auto;
+    grid-template-columns: 1fr;
+    }
+}
+    .mailIcon{        
+        place-self: center;
+    }
+    .mmForm form{      
+        padding-left: 0px;    
+    }
+
+/* new grid quote carousel */
+.carouselContainer{
+    margin: auto;
+    width: 85%;
+    height: auto;    
+}
+.carouselTitle{
+    margin: auto;
+    font-size: 1.5rem;
+    text-align: center;
+}
+.quoteText_p{
+    text-align: center;
+    
+    color: var(--Musta);
+    font-size: 24px;
+    font-weight: bold;
+}
+.quoteText_author{
+    font-weight: bold;
+    font-style: normal;
+    height: 0rem;    
+    margin: 1rem;
+    font-size: 16px;
+    letter-spacing: 0.3px;
+}
+.quoteText_title{
+    font-weight: normal;
+    font-style: normal;
+    height: 0rem;    
+    margin: 1rem;
+    font-size: 13px;
+    
+}
+.quoteContainer{
+    grid-gap: 5px;
+    padding: 35px;
+    display: grid;
+    height: auto;
+    grid-template-columns:  0.1fr 2fr 0.5fr;
+    grid-template-rows: 1fr;
+}
+.quoteContainer:before {    
+    content: '“';
+    padding: 0 15px;
+    margin: 0px;
+    font-size: 120px;
+    color: var(--Kupari-light-50);
+}
+.quoteText{
+    padding-top: 15px;
+}
+.quotePerson{
+    margin: auto;
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    margin: 10px;
+}
+@media only screen and (max-width: 860px){
+    .quoteContainer{        
+        grid-template-columns:  1fr;
+        grid-template-rows: auto auto auto;
+    }
+    .quoteContainer:before {
+        display: none;        
+    }
+    .quoteText{
+        text-align: center;
+        margin-bottom: 24px;
+    }
+    .homePageH{
+        height: 750px;
+    }
+}
+@media only screen and (orientation: landscape) and (max-width: 860px){
+    .homePageH{
+        height: 500px;
+    }
+    .quoteContainer{        
+        grid-template-columns: auto auto auto;
+        grid-template-rows: auto;
+    }
+    
+    .quoteContainer:before {
+        display: flex;        
+    }
+}
+/* tietoa meista */
+.smallQuoteCarousel{
+    width: 75%;
+    height: auto;
+    margin: 100px auto;
+    text-align: center;
+}
+.smallQuoteCarouselMessage{
+    grid-gap: 5px;
+    padding: 35px;
+    display: grid;
+    height: auto;
+    grid-template-columns:  0.1fr 2fr ;
+    grid-template-rows: auto;
+    
+}
+.smallQuoteCarouselMessage::before {    
+    content: '“';
+    padding: 0 15px;
+    margin: 0px;
+    font-size: 120px;
+    color: var(--Kupari-light-50);
+}
+@media only screen and (max-width: 860px){
+    .smallQuoteCarousel{
+        width: 95%;
+        margin: 50px auto;
+    }
+    .smallQuoteCarouselMessage{
+        grid-template-columns: auto;
+        padding: 15px;
+    }
+    .smallQuoteCarouselMessage p{
+        font-size: 15px;
+    }
+    .smallQuoteCarouselMessage::before {    
+        content: '';
+}
+/* new event info */
